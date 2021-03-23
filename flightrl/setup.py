@@ -16,6 +16,5 @@ setup(
     description='Flightmare: A Quadrotor Simulator.',
     long_description='',
     install_requires=[''],
-    packages=[package for package in find_packages()
-              if package.startswith('rpg_baselines')]
+    packages=['rpg_baselines', 'rpg_baselines.ppo', 'rpg_baselines.common', 'rpg_baselines.envs']
 )

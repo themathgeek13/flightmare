@@ -44,7 +44,7 @@ First, [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/
 
 4. In a new terminal, run the container with(remember to change the `path_to_dodge_drone_challenge_folder`!)
    
-   `docker run -it -v path_to_dodge_drone_challenge_folder:/root/challenge/ --rm --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all  -p 10253:10253 -p 10254:10254 --name ddc-challenge uzhrpg/dodgedrone-challenge:base /bin/bash`
+   `docker run -it -v path_to_dodge_drone_challenge_folder:/root/challenge/ --rm --gpus all  -p 10253:10253 -p 10254:10254 --name ddc-challenge uzhrpg/dodgedrone-challenge:base /bin/bash`
    
    Breakdown of the command:
    
@@ -62,7 +62,7 @@ First, [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/
 5. In this terminal, follow the instructions that you can find here [uzh-rpg/flightmare Wiki](https://github.com/uzh-rpg/flightmare/wiki/Install-with-pip) to install flightmare and its dependencies. The apt dependencies are already installed. For example, if you want to usa anaconda, please use these commands:
    1. `conda create --name RL python=3.6`
    2. `conda activate RL`
-   3. `conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 -c pytorch`
+   3. `conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.2 -c pytorch`
    4. `cd flightmare/flightlib && pip install .`
    5. `pip install stable-baselines3`
 
